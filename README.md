@@ -4,7 +4,6 @@
 - [History](#history)
 - [Automation Piramide](#automation-piramide)
 - [Information Model](#opc-ua---information-model)
-  - [Base Information Model](#opc-ua---base-information-model)
   - [Built-in Information Models](#opc-ua-built-in-information-models)
 
 ## Introduction
@@ -101,24 +100,28 @@ And we can use this table to improve our Identifier so now our ID could be:
 
 > ns=0;string=Temperature
 
-The basic unit in a OPC UA is called Node, the node has: Name, Data, References (References to other nodes).
+The basic unit in a OPC UA is called **Node**.
 
-The basic data types offering by the OPC UA is called Class and we use this class to create our Nodes.
+<p align="center">
+ <img src=".images/5.png" alt="node" width=350 hight=250/> 
+</p>
+
+To help us to represent our equipments and fields the OPC have created the OPC UA Base Information Model, each consiste in a several basic Node Class to help us to create our own complexes Nodes. Here the Node Class offering but the OPC UA:
 
 - **Variable Node Class**: Used to transport data
-- **Method Node Class**: Used to expose rpc methods
+- **Variable Type**:
 - **Object Node Class**: Used to create real world objects. We can store state and behavior, we store through Variable Node and behavior through Method Node.
 - **Object Type Node Class**: Used to define Node Types like an **struct**, Exemplo we can create a Pump Type and use it to represent our Pump 1, Pump 2 and so on.
+- **View**:
+- **Data Type**:
 - **Reference Type Node Class**: Used to reference an Class to another. As we now we can create our types uniting all the other class and we use this class to reference one to another.
+- **Method Node Class**: Used to expose rpc methods
 
 The picture bellow show an exemplo how we can use those class
 
 <p align="center">
  <img src=".images/4.png" alt="node-class-exemplo" width=550 hight=250/> 
 </p>
-
-
- ### OPC UA - Base Information Model
 
 #### OPC UA Built-in Information Models
 
