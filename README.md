@@ -2,6 +2,7 @@
 
 - [Introduction](#introduction)
 - [History](#history)
+- [Automation Piramide](#automation-piramide)
 - [Information Model](#opc-ua---information-model)
   - [Base Information Model](#opc-ua---base-information-model)
   - [Built-in Information Models](#opc-ua-built-in-information-models)
@@ -70,9 +71,54 @@ Client software can verify what profiles a server supports. This is necessary to
 
 At the OPC UA DevCon in October 2006, in Munich the first prototypes were presented live. Various UA Servers have been shown on a Beckhoff programmable logic controller and an embedded test board from Euros. The Beckhoff PLC is based on Windows XP Embedded and the embedded controller is based on the real-time operating system Euros. The company Embedded Labs Ltd demonstrated an OPC UA Server based on their own C++ UA Stack executing on a single chip ARM microcontroller with 64kB RAM. In October 2012 the German Fraunhofer-Application Center IOSB-INA and the Institute for industrial Information Technologies (inIT) showed that an OPC UA server is scalable down to 15 kB RAM and 10 kB ROM and therefore usable at chip level.
 
+## Automation Piramide
+
+<p align="center">
+ <img src=".images/1.png" alt="automation-piramide-1" width=950 hight=350/> 
+</p>
+
+<p align="center">
+ <img src=".images/2.png" alt="automation-piramide-2" width=950 hight=350/> 
+</p>
+
 ## OPC UA - Information Model
 
-### OPC UA - Base Information Model
+When we use OPC UA the best practice to modeling our datas is to represent our fields/equipments/collected datas in a hierarchical way for all OPC UA data.
+
+The OPC UA data modeling was built in top of OOP, so there is a lot of basic Data Types and Built-in Data Types which we inherited to create our own Data Types. Each Data Type has its own **identifier**. Identifier kind of UUID for each Data Type and is composed by tree elements: *namespace uri*, *identifier data type* and *identifier*. Exemplo:
+
+> ns=http://opcfundation.org/UA/;string=Temperature
+
+In this exemplo the ns is *http://opcfundation.org/UA/*, the data type is *string* and the identifier is *Temperature*.
+
+As we can see this identifier is a lite bit longer, and it is because the namespace is too long. In the OPC UA we store all the namespace in something like a table
+
+<p align="center">
+ <img src=".images/3.png" alt="namespace" width=300 hight=100/> 
+</p>
+
+And we can use this table to improve our Identifier so now our ID could be:
+
+> ns=0;string=Temperature
+
+The basic unit in a OPC UA is called Node, the node has: Name, Data, References (References to other nodes).
+
+The basic data types offering by the OPC UA is called Class and we use this class to create our Nodes.
+
+- **Variable Node Class**: Used to transport data
+- **Method Node Class**: Used to expose rpc methods
+- **Object Node Class**: Used to create real world objects. We can store state and behavior, we store through Variable Node and behavior through Method Node.
+- **Object Type Node Class**: Used to define Node Types like an **struct**, Exemplo we can create a Pump Type and use it to represent our Pump 1, Pump 2 and so on.
+- **Reference Type Node Class**: Used to reference an Class to another. As we now we can create our types uniting all the other class and we use this class to reference one to another.
+
+The picture bellow show an exemplo how we can use those class
+
+<p align="center">
+ <img src=".images/4.png" alt="node-class-exemplo" width=550 hight=250/> 
+</p>
+
+
+ ### OPC UA - Base Information Model
 
 #### OPC UA Built-in Information Models
 
