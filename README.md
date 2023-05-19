@@ -90,7 +90,7 @@ The OPC UA data modeling was built in top of OOP, so there is a lot of basic Dat
 
 In this exemplo the ns is *http://opcfundation.org/UA/*, the data type is *string* and the identifier is *Temperature*.
 
-As we can see this identifier is a lite bit longer, and it is because the namespace is too long. In the OPC UA we store all the namespace in something like a table
+As we can see this identifier is a lite bit longer, and it is because the namespace is too long. In the OPC UA we store all the namespace like a table
 
 <p align="center">
  <img src=".images/3.png" alt="namespace" width=300 hight=100/> 
@@ -100,13 +100,13 @@ And we can use this table to improve our Identifier so now our ID could be:
 
 > ns=0;string=Temperature
 
-The basic unit in a OPC UA is called **Node**.
+In the OPC UA, the basic unit of a data type is called **Node**.
 
 <p align="center">
  <img src=".images/5.png" alt="node" width=350 hight=250/> 
 </p>
 
-To help us to represent our equipments and fields the OPC have created the OPC UA Base Information Model, each consiste in a several basic Node Class to help us to create our own complexes Nodes. Here the Node Class offering but the OPC UA:
+To help us to represent our equipments and fields the OPC have created the **OPC UA Base Information Model**, which consiste in a several basic Node Class to help us to create our own complexes Nodes. Here the Node Class offering but the OPC UA:
 
 - **Variable Node Class**: Used to transport data
 - **Variable Type**:
