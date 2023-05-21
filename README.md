@@ -1,10 +1,14 @@
 # OPC UA - Hello World
 
+Thanks [Kudzai Manditereza](https://www.linkedin.com/in/kudzaimanditereza/) for the nice [playlist about OPC UA](https://www.youtube.com/watch?v=vRk42W_4R0o&list=PLIrJJXPVFRvjHsA9tta8yULOB8nPUO_G7)
+
 - [Introduction](#introduction)
 - [History](#history)
 - [Automation Piramide](#automation-piramide)
 - [Information Model](#opc-ua---information-model)
   - [Built-in Information Models](#opc-ua-built-in-information-models)
+- [Custom OPC UA Information Model](#custom-opc-ua-information-model)
+- [Example](#example)
 
 ## Introduction
 
@@ -123,7 +127,7 @@ The picture bellow show an exemplo how we can use those class
  <img src=".images/4.png" alt="node-class-exemplo" width=550 hight=250/> 
 </p>
 
-#### OPC UA Built-in Information Models
+### OPC UA Built-in Information Models
 
 - **DA - Data Access**
   - Read
@@ -141,3 +145,13 @@ The picture bellow show an exemplo how we can use those class
 
 - **Prog - Program Information Model**
   - Run Stored Instructions
+
+### Custom OPC UA Information Model
+
+## Example
+
+For study propose we will create an OPC UA Server and Client for a *Batch Plant*.
+
+<p align="center">
+ <img src=".images/6.png" alt="node-class-exemplo" width=550 hight=250/> 
+</p>
