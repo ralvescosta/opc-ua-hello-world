@@ -148,10 +148,29 @@ The picture bellow show an exemplo how we can use those class
 
 ### Custom OPC UA Information Model
 
+To create an OPC UA Information Model we need the NodeSet2.xml file, this file following a specif format which is included in the standard OPC UA and all OPC UA SKDs use this file to generate the code to our target OPC UA Server and populate the address spaces. There is tree ways to produce this file.
+
+- Creating by our self the NodeSet2.xml, but this type of file is a lit bit confusing and there a lot of roles to be follow. 
+- Using some graphical tools which export for us the NodeSet2 file.
+- Creating a model xml file using the Model Design standard and compiling this file to the NodeSet2.xml.
+
+The OPC UA Foundation recommends to use the third option. 
+
 ## Example
 
-For study propose we will create an OPC UA Server and Client for a *Batch Plant*.
+For study propose we will create an OPC UA Server and Client for a *Batch Plant* using the [OPA UA .NET Standard](https://github.com/OPCFoundation/UA-.NETStandard)
 
 <p align="center">
  <img src=".images/6.png" alt="node-class-exemplo" width=550 hight=250/> 
 </p>
+
+The [ModelDesign.xml file](https://github.com/ralvescosta/opc-ua-hello-world/blob/main/ModelDesign.xml) was created to represent this plant.
+
+As we know, to create the NodeSet2.xml we need to "compile" the ModelDesign.xml file, we use the [UA-ModelCompiler](https://github.com/OPCFoundation/UA-ModelCompiler) offered by the OPC UA Foundation. We can clone the repository, build the solution and execute the CLI or just use the container image [following the documentation](https://github.com/OPCFoundation/UA-ModelCompiler/pkgs/container/ua-modelcompiler).
+
+To compile our exemplo we can just execute this command bello:
+
+```bash
+docker pull ghcr.io/opcfoundation/ua-modelcompiler:latest && \
+docker run -v YOUR_DIR/opc-ua-hello-world:/data --rm ghcr.io/opcfoundation/ua-modelcompiler:latest compile -d2 /data/ModelDesign.xml -cg /data/generated/ModelDesign.csv -o2 /data/generated -version v104
+```
