@@ -166,7 +166,7 @@ For study propose we will create an OPC UA Server and Client for a *Batch Plant*
 
 The [ModelDesign.xml file](https://github.com/ralvescosta/opc-ua-hello-world/blob/main/ModelDesign.xml) was created to represent this plant.
 
-As we know, to create the NodeSet2.xml we need to "compile" the ModelDesign.xml file, we use the [UA-ModelCompiler](https://github.com/OPCFoundation/UA-ModelCompiler) offered by the OPC UA Foundation. We can clone the repository, build the solution and execute the CLI or just use the container image [following the documentation](https://github.com/OPCFoundation/UA-ModelCompiler/pkgs/container/ua-modelcompiler).
+As we know, to create the NodeSet2.xml we need to "compile" the ModelDesign.xml file, we will use the [UA-ModelCompiler](https://github.com/OPCFoundation/UA-ModelCompiler) offered by the OPC UA Foundation. We can clone the repository, build the solution and execute the CLI or just use the container image [following the documentation](https://github.com/OPCFoundation/UA-ModelCompiler/pkgs/container/ua-modelcompiler).
 
 To compile our exemplo we can just execute this command bello:
 
