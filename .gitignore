@@ -1,2 +1,5 @@
 generated
 .generated
+bin
+Debug
+Release
