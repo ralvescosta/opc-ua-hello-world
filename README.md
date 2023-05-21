@@ -168,7 +168,7 @@ The [ModelDesign.xml file](https://github.com/ralvescosta/opc-ua-hello-world/blo
 
 As we know, to create the NodeSet2.xml we need to "compile" the ModelDesign.xml file, we will use the [UA-ModelCompiler](https://github.com/OPCFoundation/UA-ModelCompiler) offered by the OPC UA Foundation. We can clone the repository, build the solution and execute the CLI or just use the container image [following the documentation](https://github.com/OPCFoundation/UA-ModelCompiler/pkgs/container/ua-modelcompiler).
 
-To compile our exemplo we can just execute this command bello:
+To compile our exemplo we can just execute this command bellow:
 
 ```bash
 docker pull ghcr.io/opcfoundation/ua-modelcompiler:latest && \
